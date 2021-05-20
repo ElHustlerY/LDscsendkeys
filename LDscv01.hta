@@ -5,7 +5,9 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <title>Send Keys</title>
 		
-		
+	
+
+
 		
 		
         <script type="text/vbscript">
@@ -40,6 +42,7 @@
                         .SendKeys "{ENTER}-s 80{ENTER}"
 			             End With
             End Sub
+			
 			Sub size90_OnClick()
                 Dim WShell : Set WShell = CreateObject("WScript.Shell")
                 With WShell
@@ -47,6 +50,7 @@
                         .SendKeys "{ENTER}-s 90{ENTER}"
 			             End With
             End Sub
+			
 			Sub size100_OnClick()
                 Dim WShell : Set WShell = CreateObject("WScript.Shell")
                 With WShell
@@ -69,6 +73,22 @@
                 With WShell
 	                    .AppActivate "StarCraft II"
                         .SendKeys "{ENTER}@rl{ENTER}"
+					     End With
+            End Sub		
+			
+			Sub pt_OnClick()
+                Dim WShell : Set WShell = CreateObject("WScript.Shell")
+                With WShell
+	                    .AppActivate "StarCraft II"
+                        .SendKeys "{ENTER}@pt{ENTER}"
+					     End With
+            End Sub		
+			
+			Sub upt_OnClick()
+                Dim WShell : Set WShell = CreateObject("WScript.Shell")
+                With WShell
+	                    .AppActivate "StarCraft II"
+                        .SendKeys "{ENTER}@upt{ENTER}"
 					     End With
             End Sub		
 			
@@ -96,32 +116,122 @@
 					     End With
             End Sub	
 			
-        </script>
+			Sub FPS_OnClick()
+                Dim WShell : Set WShell = CreateObject("WScript.Shell")
+                With WShell
+	                    .AppActivate "StarCraft II"
+                        .SendKeys "^%f"
+					     End With
+            End Sub	
+			
+		
+			Sub sleep (Timesec)
+			Set objwsh = CreateObject("WScript.Shell") 
+			objwsh.Run "Timeout /T " & Timesec & " /nobreak" ,0 ,true
+			Set objwsh = Nothing
+			End Sub
+		
+			
+		
+		
+			Sub Bank_OnClick()
+				
+				Dim Wshell: Set WShell = CreateObject("WScript.Shell")
+				With WShell 
+				.AppActivate "StarCraft II"
+			    .SendKeys "+f"
+				
+				
+				
+				End Sub	
 	
+			
+			
+
+    
+    
+
+        </script>
+	<script type="text/javascript">
+	var Xcountdown;
+	var XTime;
+	function Xinit() {
+    XTime = 11;
+    XReset();
+    XTrigger();
+}
+
+function XTrigger() {
+    if(XTime > 0) {
+        XTime--;
+        document.getElementById('XTimer').innerHTML = XTime;
+        if(XTime > 0) {
+            Xcountdown = setTimeout('XTrigger()', 1000);
+        }}}
+function XReset() {
+    clearTimeout(Xcountdown);
+}
+
+var XDcountdown;
+	var XDTime;
+	function XDinit() {
+    XDTime = 311;
+    XDReset();
+    XDTrigger();
+}
+
+function XDTrigger() {
+    if(XDTime > 0) {
+        XDTime--;
+        document.getElementById('XDTimer').innerHTML = XDTime;
+        if(XDTime > 0) {
+            XDcountdown = setTimeout('XDTrigger()', 1000);
+        }}}
+function XDReset() {
+    clearTimeout(XDcountdown);
+}
+
+
+
+	
+
+</script>
+
 
 	
    </head>
     <body>
 	
-	
-        <button id="size50">50</button>
+		<button id="size50">50</button>
 		<button id="size60">60</button>
 		<button id="size70">70</button>
 		<button id="size80">80</button>
 		<button id="size90">90</button>
 		<button id="size100">100</button>
-				<br>
-				<br>
-		<button id="data">@data+insta in</button>
+			<br>
+		<br>	
+		<button id="data">@data+"CTRL+K"</button>
 		<br>
 		<br>
-		<button id="rl">@RL</button>
+		<button id="rl">@rl</button>
+		
+		<button id="pt">@pt</button>
+		
+		<button id="upt">@upt</button>
+		
 		<br><br>
-		<button id="xd">@X</button>
-		<button id="X">@XD</button>
+		
+		
+		<button onclick="Xinit()" id="x">@X</button>
+		<p id="XTimer"></p>
+		<button onclick="XDinit()" id="XD">@XD</button>
+		<p id="XDTimer"></p>
 		<button id="sxd">@SXD</button>
+		
+		<button id="FPS">Show/Hide FPS</button>
 
-
-
+		<button id="Bank">AFK Fill The Bank</button>
+		<input type="text" value="" id="AFKTimer">
+		
     </body>
 </html>
