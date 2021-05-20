@@ -67,6 +67,20 @@
 						.SendKeys "^K"
 			             End With
             End Sub
+			Sub nf_OnClick()
+                Dim WShell : Set WShell = CreateObject("WScript.Shell")
+                With WShell
+	                    .AppActivate "StarCraft II"
+                        .SendKeys "{ENTER}@nf{ENTER}"
+					     End With
+            End Sub	
+			Sub yf_OnClick()
+                Dim WShell : Set WShell = CreateObject("WScript.Shell")
+                With WShell
+	                    .AppActivate "StarCraft II"
+                        .SendKeys "{ENTER}@yf{ENTER}"
+					     End With
+            End Sub	
 			
 			Sub RL_OnClick()
                 Dim WShell : Set WShell = CreateObject("WScript.Shell")
@@ -211,6 +225,10 @@ function XDReset() {
 			<br>
 		<br>	
 		<button id="data">@data+"CTRL+K"</button>
+		<br>
+		<br>
+		<button id="nf">@nf</button>
+		<button id="yf">@yf</button>
 		<br>
 		<br>
 		<button id="rl">@rl</button>
